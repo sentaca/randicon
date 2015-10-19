@@ -1,64 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Randicon Test</title>
-        <style>
-         svg {border-radius: 50%; border: 1px solid antiquewhite;}
+  <head>
+    <meta charset="utf-8">
+    <title>Randicon Test</title>
+    <style>
+     svg {border-radius: 50%; border: 1px solid antiquewhite;}
 
-         #library svg { border-radius: 5px; border: 0; margin-right: 1em;}
-             
-         body { background-color: rgba(0, 0, 20, 0.02);}
-        </style>
-    </head>
-    <body>
-        <input id="in" placeholder="Any string..."/>
+     #library svg { border-radius: 5px; border: 0; margin-right: 1em;}
+     
+     body { background-color: rgba(0, 0, 20, 0.02);}
+    </style>
+  </head>
+  <body>
+    <input id="in" placeholder="Any string..."/>
 
-        <br/>
-        
-        <svg id="svg1" width="32" height="32"/>
-        <svg id="svg2" width="64" height="64"/>
-        <svg id="svg3" width="128" height="128"/>
-        <svg id="svg4" width="256" height="256"/>
-        <svg id="svg5" width="512" height="512"/>
+    <br/>
+    
+    <svg id="svg1" width="32" height="32"/>
+    <svg id="svg2" width="64" height="64"/>
+    <svg id="svg3" width="128" height="128"/>
+    <svg id="svg4" width="256" height="256"/>
+    <svg id="svg5" width="512" height="512"/>
 
-        <div id="library">
-            
-        </div>
+    <div id="library">
+      
+    </div>
 
-        <!-- For development use these two -->
+    <!-- For development use these two -->
 
-        <!-- script src="bower_components/snap.svg/dist/snap.svg.js"></script> -->
-        <!-- script src="randicon.js"></script> -->
+    <!-- script src="bower_components/snap.svg/dist/snap.svg.js"></script> -->
+    <!-- script src="randicon.js"></script> -->
 
-        <script src="dist/randicon.min.js"></script>
+    <script src="dist/randicon.min.js"></script>
 
-        <script>
-         var e = document.getElementById("in");
-         var l = document.getElementById("library");
-         var c = 0;
-         
-         e.oninput = function(ev) {
-             randicon("#svg1", e.value);
-             randicon("#svg2", e.value);
-             randicon("#svg3", e.value);
-             randicon("#svg4", e.value);
-             randicon("#svg5", e.value);
+    <script>
+     var e = document.getElementById("in");
+     var l = document.getElementById("library");
+     var c = 0;
+     
+     e.oninput = function(ev) {
+       randicon("#svg1", e.value);
+       randicon("#svg2", e.value);
+       randicon("#svg3", e.value);
+       randicon("#svg4", e.value);
+       randicon("#svg5", e.value);
 
-             var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-             svg.setAttribute('id', "lib" + c);
-             svg.setAttribute('width', 32);
-             svg.setAttribute('height', 32);
-             l.appendChild(svg);
+       var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+       svg.setAttribute('id', "lib" + c);
+       svg.setAttribute('width', 32);
+       svg.setAttribute('height', 32);
+       l.appendChild(svg);
 
-             randicon("#lib" + c , e.value);
+       randicon("#lib" + c , e.value);
 
+       c++;
+     };
 
-
-             c++;
-             
-         };
-
-        </script>
-    </body>
+    </script>
+  </body>
 </html>
