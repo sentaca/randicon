@@ -1,0 +1,24 @@
+{
+  "name": "randicon",
+  "version": "0.1.0",
+  "description": "Random icon based on string hash code.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sentaca/randicon.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sentaca/randicon/issues"
+  },
+  "homepage": "https://github.com/sentaca/randicon#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.4.2"
+  }
+}

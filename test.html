@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Randicon Test</title>
+    </head>
+    <body>
+
+        <input id="in" placeholder="Any string..."/>
+
+        <br/>
+        
+        <svg id="svg1" width="32" height="32"/>
+        <svg id="svg2" width="64" height="64"/>
+        <svg id="svg3" width="128" height="128"/>
+        <svg id="svg4" width="256" height="256"/>
+        <svg id="svg5" width="512" height="512"/>
+
+        <script src="randicon.js"></script>
+        <script>
+         var e = document.getElementById("in");
+
+         e.onkeypress = function(ev) {
+             console.log(ev);
+         };
+
+        </script>
+    </body>
+</html>
