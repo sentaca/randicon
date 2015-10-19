@@ -1,0 +1,31 @@
+{
+  "name": "randicon",
+  "main": "randicon.js",
+  "version": "0.1.0",
+  "homepage": "https://github.com/sentaca/randicon",
+  "authors": [
+    "Maciej Lopacinski <hamsterready@gmail.com>"
+  ],
+  "description": "Generate SVG icon based on string hash code.",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "svg",
+    "gravatar",
+    "slack",
+    "icon",
+    "hashcode"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "snap.svg": "~0.4.1"
+  }
+}
