@@ -8381,7 +8381,6 @@ RandomIcon.randicon = function(elem, str) {
   z1 = s.path("M"+z1x1+","+z1y1+" Q"+(z1qx1 + qx1)+","+z1qy1+" "+(z1x2-qx1)+","+z1y2).attr({"fill" : "none", "stroke": c1, "strokeWidth": strokeWidth1});
   z2 = s.path("M"+z2x1+","+z2y1+" Q"+(z2qx1 + qx1)+","+z2qy1+" "+(z2x2+qx1)+","+z2y2).attr({"fill" : "none", "stroke": c2, "strokeWidth": strokeWidth2, "opacity" : 1.0, "mix-blend-mode": "overlay"});
 
-  console.log(z2);
   z1.transform("rotate("+m+" "+(256*scale)+" "+(256*scale)+")"); 
   z2.transform("rotate("+m+" "+(256*scale)+" "+(256*scale)+")"); 
   s.circle(20*scale+qx1, 266*scale+qx1, 50*scale).transform("rotate("+m+" "+(281*scale)+" "+(282*scale)+")").attr({fill: c1, stroke: c2, strokeWidth: 30*scale, opacity: 1.0});
