@@ -7,8 +7,9 @@
      svg {border-radius: 50%; border: 1px solid antiquewhite;}
 
      #library svg { border-radius: 5px; border: 0; margin-right: 1em;}
+
+     .randiconBgRect { fill: #F9F9F9; }
      
-     body { background-color: rgba(0, 0, 20, 0.02);}
     </style>
   </head>
   <body>
@@ -39,7 +40,7 @@
      var c = 0;
      
      e.oninput = function(ev) {
-       randicon("#svg1", e.value);
+       randicon("#svg1", e.value, {"bgRectClass" : "randiconBgRect"});
        randicon("#svg2", e.value);
        randicon("#svg3", e.value);
        randicon("#svg4", e.value);

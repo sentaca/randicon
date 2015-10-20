@@ -8314,7 +8314,24 @@ RandomIcon.hashCode = function(str) {
   return hash;
 };
 
-RandomIcon.randicon = function(elem, str) {
+RandomIcon.extend = function(target, src) {
+
+  var hash = {};
+  for (var i in src) {
+    hash[i] = target[i] 
+    if (target[i] === undefined) {
+      hash[i] = src[i];
+    } else {
+      hash[i] = target[i];
+    }
+  }
+  
+  return hash;
+};
+
+RandomIcon.randicon = function(elem, str, opts) {
+  var opts = RandomIcon.extend(opts || {}, {bgRectClass: undefined}); 
+  
   // first time svg :), don't judge me!
   
   var s = Snap(elem);
@@ -8339,7 +8356,7 @@ RandomIcon.randicon = function(elem, str) {
   var strokeWidth2 = (180 - (((hc & 0xff00) >> 8) % 13))*scale;
 
   var qx1 = (((hc & 0xff000000) >> 24) % 29)*scale;
-  var m = 51 + hc % + 91 ;
+  var m = 51 + hc % + 359 ;
   var t = hc % 3;
 
   var z1, z2;
@@ -8348,6 +8365,7 @@ RandomIcon.randicon = function(elem, str) {
   var z2x1=602, z2y1=-150, z2qx1=290, z2qy1=206, z2x2=540, z2y2=525;
   
 
+  
   switch(t) {
   case 0:
     z1x1=-10, z1y1=-150, z1qx1=510, z1qy1=156, z1x2=-30, z1y2=610;
@@ -8377,7 +8395,12 @@ RandomIcon.randicon = function(elem, str) {
   z2x2 *= scale;
   z2y2 *= scale;
 
-  
+  var bg = s.rect(0, 0, 512*scale, 512*scale).attr('class', opts.bgRectClass);
+  if (!opts.bgRectClass) {
+    bg.attr('fill', '#F9F9F9');
+  }
+                                                                            
+
   z1 = s.path("M"+z1x1+","+z1y1+" Q"+(z1qx1 + qx1)+","+z1qy1+" "+(z1x2-qx1)+","+z1y2).attr({"fill" : "none", "stroke": c1, "strokeWidth": strokeWidth1});
   z2 = s.path("M"+z2x1+","+z2y1+" Q"+(z2qx1 + qx1)+","+z2qy1+" "+(z2x2+qx1)+","+z2y2).attr({"fill" : "none", "stroke": c2, "strokeWidth": strokeWidth2, "opacity" : 1.0, "mix-blend-mode": "overlay"});
 
